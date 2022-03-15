@@ -1,112 +1,46 @@
 
 import turtle
+import draw_square
+import draw_rectangle
+import draw_triangle
+import draw_circle
+import validation as v
+
 
 terry = turtle.Turtle()
 
 
-def draw_square(input_color):
-    global terry
-
-    terry.showturtle()
-    terry.pendown()
-
-    terry.color(input_color)
-    terry.begin_fill()
-
-    terry.forward(200)
-    terry.left(90)
-    terry.forward(200)
-    terry.left(90)
-    terry.forward(200)
-    terry.left(90)
-    terry.forward(200)
-    terry.left(90)
-
-    terry.end_fill()
-    terry.penup()
-
-
-def draw_rectangle(input_color):
-    global terry
-
-    terry.showturtle()
-    terry.penup()
-    terry.goto(-100, -300)
-    terry.pendown()
-
-    terry.color(input_color)
-    terry.begin_fill()
-
-    terry.forward(400)
-    terry.left(90)
-    terry.forward(200)
-    terry.left(90)
-    terry.forward(400)
-    terry.left(90)
-    terry.forward(200)
-    terry.left(90)
-
-    terry.end_fill()
-    terry.penup()
-
-
-def draw_triangle(input_color):
-    global terry
-
-    terry.showturtle()
-    terry.penup()
-    terry.goto(-300, 0)
-    terry.pendown()
-
-    terry.color(input_color)
-    terry.begin_fill()
-
-    terry.forward(200)
-    terry.left(120)
-    terry.forward(200)
-    terry.left(120)
-    terry.forward(200)
-    terry.left(120)
-
-    terry.end_fill()
-    terry.penup()
-
-
-def draw_circle(input_color):
-    global terry
-
-    terry.showturtle()
-    terry.penup()
-    terry.goto(-100, 150)
-    terry.pendown()
-
-    terry.color(input_color)
-    terry.begin_fill()
-
-    terry.circle(50)
-
-    terry.end_fill()
-    terry.penup()
+def menu():
+    print('Welcome to the shape drawing application')
+    print('Choose your shape!')
+    print('Type 1 for square.')
+    print('Type 2 for rectangle.')
+    print('Type 3 for triangle.')
+    print('Type 4 for circle.')
+    print('Type 0 to exit.')
 
 
 def main():
-    print("Please enter a shape, the choices are: square, rectangle, triangle, circle.")
-    input_shape = input("Please choose your desired shape: ")
-    print("Please enter a color for the shape")
-    input_color = input("Pick a color!: ")
-    if input_shape == "square":
-        draw_square(input_color)
+    while True:
+        menu()
+        choice = v.get_int("Please choose an option: ", 0, 4)
+        if choice == 1:
+            draw_square.main()
 
-    if input_shape == "rectangle":
-        draw_rectangle(input_color)
+        elif choice == 2:
+            draw_rectangle.main()
 
-    if input_shape == "triangle":
-        draw_triangle(input_color)
+        elif choice == 3:
+            draw_triangle.main()
 
-    if input_shape == "circle":
-        draw_circle(input_color)
+        elif choice == 4:
+            draw_circle.main()
 
-    turtle.done()
+        elif choice == 0:
+            break
+
+        else:
+            print("Please enter one of the options!")
 
 
 if __name__ == '__main__':
