@@ -43,21 +43,26 @@ def main():
         choice = v.get_int("Please choose an option: ", 0, 4)
         if choice == 1:
             draw_square.main()
+            print('Thank you for running this program!')
             break
 
         elif choice == 2:
             draw_rectangle.main()
+            print('Thank you for running this program!')
             break
 
         elif choice == 3:
             draw_triangle.main()
+            print('Thank you for running this program!')
             break
 
         elif choice == 4:
             draw_circle.main()
+            print('Thank you for running this program!')
             break
 
         elif choice == 0:
+            print('Thank you for running this program!')
             break
 
         else:
